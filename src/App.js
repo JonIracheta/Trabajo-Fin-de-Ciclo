@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter, Routes,Route } from 'react-router-dom';
+import Login from './componentes/Login/Login';
+import Inicio from './componentes/Inicio/Inicio';
+import Calendario from './componentes/ventanaCalendario/ventanaCalendario'
+import Panel from './componentes/ventanaPanel/ventanaPanel'
+import Registro from './componentes/Registro/Registro';
+import Sprints from './componentes/ventanaSprints/ventanaSprints';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/inicio" element={<Inicio />} />
+        <Route path="/calendario" element={<Calendario />} />
+        <Route path="/panel" element={<Panel />} />
+        <Route path="/registro" element={<Registro />} />
+        <Route path="/sprints" element={<Sprints />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
